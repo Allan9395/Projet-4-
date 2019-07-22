@@ -1,0 +1,52 @@
+/* --------------------------------------------------------NAV BAR----------------------------------------------------------------*/
+.bg-light{
+    background-color: #51d09c !important;
+}
+.navbar-light .navbar-brand {
+    color: #0e4a2e;
+}
+.btn-outline-success {
+    color: #0e4a2e;
+    border-color: #0e4a2e;
+    background-color: #ffffff66;
+}
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #0e4a2e8a;
+    border-color: #0e4a2e8a;
+}
+/* ---------------------------------------------------------NAV BAR---------------------------------------------------------------*/
+/* ---------------------------------------------------------HEADER-------------------------------------------------------------*/
+header {
+    padding: 20px;
+}
+.chapters {
+    text-align: center;
+    margin: 20px;
+}
+/* ---------------------------------------------------------HEADER-------------------------------------------------------------*/
+/* ---------------------------------------------------------FOOTER-------------------------------------------------------------*/
+footer {
+    padding: 20px;
+    background-color: #5fd19c;
+}
+footer p {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 20%;
+}
+.fa-twitter-square {
+    font-size: 2rem;
+}
+.fa-instagram {
+    font-size: 2rem;
+}
+footer span {
+    text-align: center;
+}
+ul.contact-me {
+    margin-top: 20px;
+    list-style-type: none; 
+}
+/* ---------------------------------------------------------FOOTER-------------------------------------------------------------*/
