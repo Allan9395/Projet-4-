@@ -1,6 +1,7 @@
 <?php
 
 require_once('models/frontend/ticketsManager.php');
+require_once('models/frontend/commentsManager.php');
 
 function listTickets ()
 {
@@ -15,5 +16,8 @@ function ticket()
     $ticketManager = new \Allan\Blog\Projet_4\Model\TicketsManager();
     $ticket = $ticketManager->getTicket($_GET['id']);
 
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $comments = $commentManager->getComments($_GET['id']);
+    
     require('views/frontend/ticketView.php');
 }

@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="index.php?action=ticket&amp;id=<?= $data['id'];?>"> <?= htmlspecialchars($data['title']) ?> </a> </h5>
                             <p class="card-text"><?= htmlspecialchars($data['ticketDescription']) ?></p>
-                            <p class="card-text"><small class="text-muted"><?= 'Publié le '. $data['date_jma']. ' à '. $data['date_hms'] ?></small></p>
+                            <p class="card-text"><small class="text-muted"><?= 'Publié le '. $data['date_jma']. ' à '. $data['date_hm'] ?></small></p>
                         </div>
                     </div>
                 </div>

@@ -9,9 +9,9 @@ try
         } elseif ($_GET['action'] == 'ticket') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 ticket();
-            }
-        } else {
-            throw new Exeption('Erreur : aucun identifiant de billet envoyé');
+            } else {
+                throw new Exeption('Erreur : aucun identifiant de billet envoyé');
+            } 
         }
     } else {
         listTickets();
