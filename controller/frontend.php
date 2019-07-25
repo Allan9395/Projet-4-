@@ -21,3 +21,15 @@ function ticket()
     
     require('views/frontend/ticketView.php');
 }
+
+function addComment($idTicket, $author, $comment)
+{
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $addLinesComment = $commentManager->addCommentTicket($idTicket, $author, $comment);
+
+    if ($addLinesComment == false) {
+        throw new Exeption('Impossible d\'ajouté le commentaire ! ');
+    } else {
+        header('location: index.php?action=ticket&id='.$idTicket);
+    }
+}

@@ -30,7 +30,7 @@
       <ul class="navbar-nav mr-auto my-2 mt-2 mt-lg-0"> </ul>
       <ul class="navbar-nav my-2 mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
+          <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Accueil</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#"><i class="fas fa-camera"></i> Chapitres</a>
@@ -39,7 +39,7 @@
           <a class="nav-link" href="#"><i class="fas fa-user"></i> Jean</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inscription</a>
+          <a class="nav-link" href="views/frontend/registrationView.php">Inscription</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 col-sm-offset-5">

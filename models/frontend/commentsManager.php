@@ -14,4 +14,14 @@ class CommentsManager extends Manager
         
         return $comments;
     }
+
+    public function addCommentTicket($idTicket, $author, $comment)
+    {
+        $db = $this->dbConnect();
+
+        $addComment = $db->prepare('INSERT INTO comments(id_tickets, author, comment, comment_date) VALUE(?, ?, ?, NOW())');
+        $addLinesComment = $addComment->execute(array($idTicket, $author, $comment));
+
+        return $addLinesComment;
+    }
 }
