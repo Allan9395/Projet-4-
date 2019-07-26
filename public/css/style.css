@@ -2,20 +2,34 @@
 .bg-light{
     background-color: #51d09c !important;
 }
-.navbar-light .navbar-brand {
+.formConnection input.field  {
     color: #0e4a2e;
+    background-color: #ffffff9c;
+    border-color: #0e4a2e4f;
+    padding-left: 10px;
+    border-radius: 5px;
 }
-.btn-outline-success {
+.inputBtn {
     color: #0e4a2e;
     border-color: #0e4a2e;
+    border-radius: 5px;
     background-color: #ffffff66;
 }
-.btn-outline-success:hover {
+.inputBtn:hover {
     color: #fff;
     background-color: #0e4a2e8a;
     border-color: #0e4a2e8a;
 }
-
+a.nav-link {
+    display: flex;
+}
+i.fas {
+    margin-right: 5px;
+    padding: 3px;
+}
+.formConnection {
+    margin: 0px 20px;
+}
 /* ---------------------------------------------------------NAV BAR------------------------------------------------------------*/
 /* ---------------------------------------------------------HEADER-------------------------------------------------------------*/
 header {
@@ -62,3 +76,39 @@ ul.contact-me {
 }
 
 /* ---------------------------------------------------------TICKET VIEW.PHP----------------------------------------------------*/
+
+/* ---------------------------------------------------------REGISTRATION VIEW.PHP----------------------------------------------*/
+.conteinerForm {
+    padding: 25px;
+}
+.registerForm {
+    background-color: #bce2c77a !important;
+    padding: 15px;
+    border: 1px solid #1e4a2f47;
+    border-radius: 5px;
+}
+.form-group.submit {
+    text-align: center;
+}
+.submitRegistration {
+    color: #0e4a2e;
+    border-color: #0e4a2e;
+    max-width: 130px;
+    min-width: 77px;
+}
+.labelRegister {
+    text-align: end;
+}
+.inputRegister {
+    max-width: 380px;
+    height: 33px;
+    border: 1px solid #1e4a2f66;
+    border-radius: 4px;
+}
+/* ---------------------------------------------------------REGISTRATION VIEW.PHP----------------------------------------------*/
+
+@media (max-width: 684px) {
+    .labelRegister {
+        text-align: initial;
+    }
+}

@@ -36,16 +36,17 @@
           <a class="nav-link" href="#"><i class="fas fa-camera"></i> Chapitres</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-user"></i> Jean</a>
+          <a class="nav-link" href="#"><i class="fas fa-user-edit"></i> Jean</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="views/frontend/registrationView.php">Inscription</a>
+          <a class="nav-link" href="index.php?action=registration"><i class="fas fa-user-plus"></i>Inscription</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 col-sm-offset-5">
-        <input class="form-control mr-sm-1" type="text" name="pseudo" placeholder="Pseudo" ">
-      <input class=" form-control mr-sm-1" type="password" name="password" placeholder="Mot de Passe" ">
-      <button class=" btn btn-outline-success my-2 my-sm-0" type="submit">Connexion</button>
+      <form action="index.php?action=homeViewConnect" method="post" class="formConnection">
+        <input class="field" type="text" name="usernameConnect" id="name" placeholder="name" required>
+        <input class="field" type="password" name="passwordConnect" id="password" placeholder="password" required>
+        <input class="inputBtn" type="submit" value="valider">
+
       </form>
     </div>
   </nav>

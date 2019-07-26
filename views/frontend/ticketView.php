@@ -19,11 +19,11 @@
                 <h2>Commentaires</h2>
                 <div class="form-group">
                     <div class="form-group"><label for="author">Nom:</label></<label>
-                        <input type="text" name="author" class="form-control input-sm" id="author" placeholder="Nom">
+                        <input type="text" name="author" class="form-control input-sm" id="author" placeholder="Nom" required>
                     </div>
                     <div class="form-group"><label for="comment">Commentaire:</label></label>
                         <input type="text" name="comment" class="form-control input-sm" id="comment"
-                            placeholder="Commentaire">
+                            placeholder="Commentaire" riquired>
                     </div>
                     <div class="form-group"> <input type="submit" class="btn btn-success" value="Valider"></<input>
                     </div>
