@@ -9,6 +9,7 @@ function listTickets ()
     $tickets = $ticketsManager->getTickets();
 
     require('views/frontend/homeview.php');
+
 }
 
 function ticket() 

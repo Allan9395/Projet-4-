@@ -1,6 +1,8 @@
 <?php
 
 require_once('models/backend/userManager.php');
+require_once('models/frontend/ticketsManager.php');
+require_once('models/frontend/commentsManager.php');
 
 function dataVerification($username, $email, $password, $password_confirm)
 {
@@ -41,7 +43,8 @@ function dataVerification($username, $email, $password, $password_confirm)
     }
 }
 
-function identityCheck($usernameConnect, $passwordConnect) {
+function identityCheck($usernameConnect, $passwordConnect) 
+{
 
     $usernameConnect = trim(htmlspecialchars($usernameConnect));
     $passwordConnect = trim(htmlspecialchars($passwordConnect));
@@ -58,14 +61,41 @@ function identityCheck($usernameConnect, $passwordConnect) {
         echo 'Mauvais identifiant ou mot de passe !';
     } else {
  
-        echo $identityUser['id']. ' <br> '. $usernameConnect. ' <br>'. $passwordConnect. '<br>'. $identityUser['password']. '<br>'. $identicalEncryptedPassword. '<br>';
+        //echo $identityUser['id']. ' <br> '. $usernameConnect. ' <br>'. $passwordConnect. '<br>'. $identityUser['password']. '<br>'. $identicalEncryptedPassword. '<br>';
 
         if ($identicalEncryptedPassword) {
-
-            echo 'Tu est connecter';
+            session_start();
+            $_SESSION['isAdmin'] = true;
+            $_SESSION['id'] = $identityUser['id'];
+            $_SESSION['username'] = $usernameConnect;
+            header('Location: index.php?action=admin');
         } else {
             echo 'Mauvais identifiant ou mot de passe !';
         }
     } 
 
+}
+
+function listTicketsAdmin ()
+{
+    $ticketsManager = new \Allan\Blog\Projet_4\Model\TicketsManager();
+    $tickets = $ticketsManager->getTickets();
+
+    require('views/backend/admin.php');
+}
+
+function adminTicket() 
+{
+    $ticketManager = new \Allan\Blog\Projet_4\Model\TicketsManager();
+    $ticket = $ticketManager->getTicket($_GET['id']);
+
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $comments = $commentManager->getComments($_GET['id']);
+    
+    require('views/backend/adminTicketView.php');
+}
+
+function adminAddChapter()
+{
+    
 }

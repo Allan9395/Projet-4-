@@ -26,4 +26,13 @@ class UserManager extends Manager
 
         return $userConnect;
     }
+
+    public function getTickets()
+    {
+        $db = $this->dbConnect();
+
+        $req = $db->query('SELECT id, title	, ticketDescription, contents, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS date_jma, DATE_FORMAT(creation_date, \'%Hh%i\') AS date_hm FROM tickets ORDER BY creation_date DESC LIMIT 0, 5');
+
+        return $req;
+    }
 }

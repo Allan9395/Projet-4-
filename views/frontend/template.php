@@ -15,6 +15,14 @@
 
     <link rel="stylesheet" href="public/css/style.css">
 
+  <!-- WysiWig Tiny MCE -->
+  <script src='https://cdn.tiny.cloud/1/ce0p90fr26tw881opzylgtv1oetjkbf8k56k0qqwsdedui0u/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+  <script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
+
   <title><?= $title ?></title>
 </head>
 
@@ -43,10 +51,9 @@
         </li>
       </ul>
       <form action="index.php?action=homeViewConnect" method="post" class="formConnection">
-        <input class="field" type="text" name="usernameConnect" id="name" placeholder="name" required>
-        <input class="field" type="password" name="passwordConnect" id="password" placeholder="password" required>
-        <input class="inputBtn" type="submit" value="valider">
-
+        <input class="field" type="text" name="usernameConnect" id="name" placeholder="Pseudo" required>
+        <input class="field" type="password" name="passwordConnect" id="password" placeholder="Mot de passe" required>
+        <input class="inputBtn" type="submit" value="Connexion">
       </form>
     </div>
   </nav>
