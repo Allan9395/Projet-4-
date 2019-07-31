@@ -53,7 +53,13 @@ try
             header('Location: index.php');
         } elseif ($_GET['action'] == 'createChapter') {
             require('views/backend/adminCreateChapter.php');
-        }
+        } elseif ($_GET['action'] == 'adminAddNewChapter') {
+            if (isset($_POST['titleNewChapter']) && isset($_POST['descriptionNewChapter']) && isset($_POST['contentNewChapter'])) {
+                if (!empty($_POST['titleNewChapter']) && !empty($_POST['descriptionNewChapter']) && !empty($_POST['contentNewChapter'])) {
+                    addNewChapter($_POST['titleNewChapter'], $_POST['descriptionNewChapter'], $_POST['contentNewChapter']);
+                }
+            }
+        }  
     } else {
         listTickets();
     }

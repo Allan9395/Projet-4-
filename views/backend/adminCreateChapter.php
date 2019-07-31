@@ -1,14 +1,15 @@
 <?php $title = 'Blog Ecrivain; Jean Forteroche; Création de Chapitre'; ?>
 <?php ob_start(); ?>
 
-<div class="conteiner">
+<div class="conteiner adminCreateChapter">
 
-    <h2>Publions un nouveau chapitre !</h2>
+    <h2>Publions un nouveau chapitre !<button class="btn btn-outline-success submitAdminCreateChapter" type="submit">Publier</button></h2>
 
-    <form action="index.php?admin" method="post" class="form-group">
-        <input type="text" name="title" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-        <textarea class="tinymce" name="newChapter" id="" cols="30" rows="10"></textarea>
-        <button type="submit">Publier</button>
+    <form action="index.php?action=adminAddNewChapter" method="post" class="form-group">
+        <input type="text" name="titleNewChapter" class="form-control titleCreateChapter" id="formGroupExampleInput" placeholder="Un titre à votre chapitre">
+        <input type="text" name="descriptionNewChapter" class="form-control descriptionChapter" id="descriptionChapter" placeholder="Une description à votre chapitre">
+        <textarea class="tinymce" name="contentNewChapter" id="" cols="30" rows="10"></textarea>
+        <button class="btn btn-outline-success submitAdminCreateChapter2" type="submit">Publier</button>
     </form>
 </div>
 

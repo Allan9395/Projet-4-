@@ -106,6 +106,38 @@ ul.contact-me {
     border-radius: 4px;
 }
 /* ---------------------------------------------------------REGISTRATION VIEW.PHP----------------------------------------------*/
+/* ---------------------------------------------------------ADMINCREATECHAPTER.PHP---------------------------------------------*/
+.adminCreateChapter {
+    padding: 20px;
+}
+.adminCreateChapter h2 {
+    text-align: center;
+    padding: 20px;
+}
+.submitAdminCreateChapter {
+    margin-left: 20px;
+}
+.titleCreateChapter {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.descriptionChapter {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.submitAdminCreateChapter2 {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ---------------------------------------------------------ADMINCREATECHAPTER.PHP---------------------------------------------*/
+
+
+
+
+
+/* ---------------------------------------------------------MEDIA QUERIES------------------------------------------------------*/
 
 @media (max-width: 684px) {
     .labelRegister {

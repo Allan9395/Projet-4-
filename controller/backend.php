@@ -1,6 +1,8 @@
 <?php
 
 require_once('models/backend/userManager.php');
+require_once('models/backend/chaptersManager.php');
+
 require_once('models/frontend/ticketsManager.php');
 require_once('models/frontend/commentsManager.php');
 
@@ -95,7 +97,14 @@ function adminTicket()
     require('views/backend/adminTicketView.php');
 }
 
-function adminAddChapter()
+function addNewChapter($titleNewChapter, $descriptionNewChapter, $contentNewChapter)
 {
-    
+    $chapterManager = new \Allan\Blog\Projet_4\Model\ChaptersManager();
+    $addLinesChapter = $chapterManager->newChapters($titleNewChapter, $descriptionNewChapter, $contentNewChapter);
+
+    if ($addLinesChapter == false) {
+        throw new Exeption('Impossible d\'ajouté le nouveau chapitre ! ');
+    } else {
+        header('location: index.php?action=admin');
+    }
 }
