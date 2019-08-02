@@ -60,7 +60,7 @@ function identityCheck($usernameConnect, $passwordConnect)
 
 
     if (!$identityUser) {
-        echo 'Mauvais identifiant ou mot de passe !';
+        throw new Exception(' Mauvais identifiant ou mot de passe !');
     } else {
  
         //echo $identityUser['id']. ' <br> '. $usernameConnect. ' <br>'. $passwordConnect. '<br>'. $identityUser['password']. '<br>'. $identicalEncryptedPassword. '<br>';
@@ -72,7 +72,8 @@ function identityCheck($usernameConnect, $passwordConnect)
             $_SESSION['username'] = $usernameConnect;
             header('Location: index.php?action=admin');
         } else {
-            echo 'Mauvais identifiant ou mot de passe !';
+            //echo 'Mauvais identifiant ou mot de passe !';
+            throw new Exception(' Mauvais identifiant ou mot de passe !');
         }
     } 
 
@@ -103,8 +104,48 @@ function addNewChapter($titleNewChapter, $descriptionNewChapter, $contentNewChap
     $addLinesChapter = $chapterManager->newChapters($titleNewChapter, $descriptionNewChapter, $contentNewChapter);
 
     if ($addLinesChapter == false) {
-        throw new Exeption('Impossible d\'ajouté le nouveau chapitre ! ');
+        throw new Exception('Impossible d\'ajouté le nouveau chapitre ! ');
     } else {
         header('location: index.php?action=admin');
     }
+}
+
+function deleteChapter($idChapter)
+{
+    $chapterManager = new \Allan\Blog\Projet_4\Model\ChaptersManager();
+    $deleteLinesChapter = $chapterManager->deleteChapter($idChapter);
+
+    if ($deleteLinesChapter == false) {
+        throw new Exception('Impossible de supprimer le chapitre ! ');
+    } else {
+        $deleteLinesComments = $chapterManager->delateComment($idChapter);
+        header('location: index.php?action=admin');
+    }
+}
+
+function chapterToEdit($idChapter)
+{
+    $chapterManager = new \Allan\Blog\Projet_4\Model\ChaptersManager();
+    $chapterToEdit = $chapterManager->chapterToEdit($idChapter);
+
+    if ($chapterToEdit == false) {
+        throw new Exception('Impossible de recuperer le chapitre ! ');
+    } else {
+       require('views/backend/updateChapterView.php');
+    }
+
+}
+
+function updateChapter ($idChapter, $newTitle, $newDescription, $newContent)
+{
+    $chapterManager = new \Allan\Blog\Projet_4\Model\ChaptersManager();
+    $updateLinesChapter = $chapterManager->updateChapter($idChapter, $newTitle, $newDescription, $newContent);
+
+    if ($updateLinesChapter == false) {
+        throw new Exception('Impossible de modifier le chapitre ! ');
+    } else {
+       header('Location: index.php?action=admin');
+    }
+
+
 }

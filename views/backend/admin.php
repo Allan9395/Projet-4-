@@ -21,8 +21,8 @@
                             <p class="card-text"><small
                                     class="text-muted"><?= 'Publié le '. $data['date_jma']. ' à '. $data['date_hm'] ?></small>
                             </p>
-                            <a href="index.php?action=updateChapter">Modifier le chapitre</a> <br>
-                            <a href="index.php?action=deleteChapter">Supprimer le chapitre</a>
+                            <a href="index.php?action=updateChapter&amp;id=<?= $data['id'] ?>">Modifier le chapitre</a> <br>
+                            <a href="index.php?action=deleteChapter&amp;id=<?= $data['id'] ?>">Supprimer le chapitre</a>
 
                         </div>
                     </div>

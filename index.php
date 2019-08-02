@@ -12,14 +12,14 @@ try
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 ticket();
             } else {
-                throw new Exeption('Erreur : aucun identifiant de billet envoyé');
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
             } 
         } elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author'] && !empty($_POST['comment']))) {
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 } else {
-                    throw new Exeption('Erreur : tout les champs ne sont pas remplie');
+                    throw new Exception('Erreur : tout les champs ne sont pas remplie');
                 }
             }
         } elseif($_GET['action'] == 'registration') {
@@ -39,7 +39,7 @@ try
                     identityCheck($_POST['usernameConnect'], $_POST['passwordConnect']);
                 }
             } else {
-                throw new Exeption('Erreur : tout les champs ne sont pas remplie');
+                throw new Exception('Erreur : tout les champs ne sont pas remplie');
             } 
         } elseif ($_GET['action'] == 'admin') {
             listTicketsAdmin ();
@@ -47,7 +47,7 @@ try
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 adminticket();
             } else {
-                throw new Exeption('Erreur : aucun identifiant de billet envoyé');
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
             } 
         } elseif ($_GET['action'] == 'disconnection') {
             header('Location: index.php');
@@ -55,9 +55,31 @@ try
             require('views/backend/adminCreateChapter.php');
         } elseif ($_GET['action'] == 'adminAddNewChapter') {
             if (isset($_POST['titleNewChapter']) && isset($_POST['descriptionNewChapter']) && isset($_POST['contentNewChapter'])) {
-                if (!empty($_POST['titleNewChapter']) && !empty($_POST['descriptionNewChapter']) && !empty($_POST['contentNewChapter'])) {
+                if (!empty($_POST['titleNewChapter']) && !empty($_POST['contentNewChapter'])) {
                     addNewChapter($_POST['titleNewChapter'], $_POST['descriptionNewChapter'], $_POST['contentNewChapter']);
+                } else {
+                    throw new Exception('Erreur : Vous n\'aver pas remplie les champs pour créer le chapitre' );
                 }
+            }
+        } elseif ($_GET['action'] == 'updateChapter') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (empty($_POST['titleNewChapter']) && empty($_POST['descriptionNewChapter']) && empty($_POST['contentNewChapter'])) {
+
+                    chapterToEdit($_GET['id']);
+
+                } else {
+
+                    updateChapter($_GET['id'], $_POST['titleNewChapter'], $_POST['descriptionNewChapter'], $_POST['contentNewChapter']);
+                }
+                
+            } else {
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
+            }
+        }  elseif ($_GET['action'] == 'deleteChapter') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                deleteChapter($_GET['id']);
+            } else {
+                throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }  
     } else {
@@ -66,5 +88,6 @@ try
 
 } catch(Exeption $e) {
     $errorMessage = $e->getMessage();
-    echo 'Erreur : '. $errorMessage;
+    //echo 'Erreur : '. $errorMessage;
+    require('views/frontend/errorView.php');
 }

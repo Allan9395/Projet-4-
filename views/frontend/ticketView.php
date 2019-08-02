@@ -35,6 +35,7 @@
                     <p><strong><?= htmlspecialchars($dataComments['author']); ?></strong> le
                         <?= $dataComments['date_jma']. ' à '. $dataComments['date_hm']; ?></p>
                     <p><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em></p>
+                    <p><a href="index.php?action=report&amp;id=<?= $dataComments['id'] ?>">Signaler</a></p>
                 </div>
                 <?php } $comments->closeCursor();?>
             </div>
