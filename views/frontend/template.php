@@ -28,7 +28,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Billet simple pour l'Alaska</a>
+    <a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,10 +41,10 @@
           <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Accueil</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-camera"></i> Chapitres</a>
+          <a class="nav-link" href="index.php?action=chapters"><i class="fas fa-camera"></i> Chapitres</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-user-edit"></i> Jean</a>
+          <a class="nav-link" href="index.php?action=jean"><i class="fas fa-user-edit"></i> Jean</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="index.php?action=registration"><i class="fas fa-user-plus"></i>Inscription</a>
@@ -86,6 +86,8 @@
   </footer>
 
   <!-- Optional JavaScript -->
+  <!-- <script src="public/js/index.js"></script> -->
+  
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

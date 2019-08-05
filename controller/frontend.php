@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 require_once('models/frontend/ticketsManager.php');
 require_once('models/frontend/commentsManager.php');
@@ -13,8 +13,6 @@ function listTickets ()
     } else {
         require('views/frontend/homeview.php');
     }
-
-
 }
 
 function ticket() 
@@ -29,6 +27,18 @@ function ticket()
         throw new Exception('Impossible de lire le chapitre ! ');
     } else {
         require('views/frontend/ticketView.php');
+    }
+}
+
+function chaptersPage()
+{
+    $ticketsManager = new \Allan\Blog\Projet_4\Model\TicketsManager();
+    $tickets = $ticketsManager->getTickets();
+
+    if ($tickets == false) {
+        throw new Exception('Impossible de lire les chapitres ! ');
+    } else {
+        require('views/frontend/chaptersPage.php');
     }
 }
 

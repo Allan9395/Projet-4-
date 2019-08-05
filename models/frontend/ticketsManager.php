@@ -1,4 +1,4 @@
-<?php
+<?php      //Chapter
 namespace Allan\Blog\Projet_4\Model;
 
 require_once('manager.php');
@@ -25,5 +25,5 @@ class TicketsManager extends Manager
         return $ticket;
     }
     
-
+    
 }

@@ -1,4 +1,5 @@
-<?php
+<?php       // Comments
+
 namespace Allan\Blog\Projet_4\Model;
 
 require_once('manager.php');
@@ -24,4 +25,39 @@ class CommentsManager extends Manager
 
         return $addLinesComment;
     }
+
+    public function updateComment ($idComment)
+    {
+        $db = $this->dbConnect();
+        $updateComment = $db->prepare('UPDATE comments SET report = 1 WHERE id = :idComment');
+        $updateComment->execute(array('idComment' => $idComment ));
+
+        return $updateComment;
+    }
+
+    public function commentsPosted()
+    {
+        $db = $this->dbConnect();
+        $getComments = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS date_jma, DATE_FORMAT(comment_date, \'%Hh%i\') AS date_hm FROM comments WHERE report= 1 ');
+        
+        return $getComments;
+    }
+
+    public function delateComment ($idComment)
+    {
+        $db = $this->dbConnect();
+        $deleteComment = $db->prepare('DELETE FROM comments WHERE id= ? ');
+        $deleteLinesComment = $deleteComment->execute(array($idComment));
+
+        return $deleteLinesComment;
+    }
+    public function keepComment ($idComment)
+    {
+        $db = $this->dbConnect();
+        $keepComment = $db->prepare('UPDATE comments SET report = 0 WHERE id = :idComment');
+        $keepLinesComment = $keepComment->execute(array('idComment' => $idComment ));
+
+        return $keepLinesComment;
+    }
+    
 }

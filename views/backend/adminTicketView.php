@@ -11,8 +11,8 @@
     <div class="card border-success mb-3 ticket">
         <div class="card-header">
             <div> <?= $ticket['title']. ', publié le '. $ticket['date_jma']. ' à '. $ticket['date_hm'] ?> </div>
-            <div> <a href="index.php?action=updateChapter">Modifier le chapitre</a> </div>
-            <div> <a href="index.php?action=deleteChapter">Supprimer le chapitre</a> </div>
+            <div> <a href="index.php?action=updateChapter&amp;id=<?= $_GET['id'] ?>">Modifier le chapitre</a> </div>
+            <div> <a href="index.php?action=deleteChapter&amp;id=<?= $_GET['id'] ?>">Supprimer le chapitre</a> </div>
         </div>
 
         <div class="card-body text-success">
@@ -23,6 +23,7 @@
             <div>
                 <?php while ($dataComments = $comments->fetch()) { ?>
                 <div class="comment">
+                    <h3>Les commentaires: </h3> <br>
                     <p><strong><?= htmlspecialchars($dataComments['author']); ?></strong> le
                         <?= $dataComments['date_jma']. ' à '. $dataComments['date_hm']; ?></p>
                     <p><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em></p>

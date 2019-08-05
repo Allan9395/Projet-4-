@@ -9,9 +9,9 @@
     </p>
     <div class="card border-success mb-3 ticket">
         <div class="card-header">
-            <?= $ticket['title']. ', publié le '. $ticket['date_jma']. ' à '. $ticket['date_hm']  ?></div>
+            <?= htmlspecialchars($ticket['title']). ', publié le '. $ticket['date_jma']. ' à '. $ticket['date_hm']  ?></div>
         <div class="card-body text-success">
-            <h5 class="card-title ticket-title-ticketView"><?= $ticket['title']; ?></h5>
+            <h5 class="card-title ticket-title-ticketView"><?= htmlspecialchars($ticket['title']); ?></h5>
             <p class="card-text"><?= $ticket['contents'] ?></p>
         </div>
         <div class="card-footer">
@@ -34,8 +34,8 @@
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($dataComments['author']); ?></strong> le
                         <?= $dataComments['date_jma']. ' à '. $dataComments['date_hm']; ?></p>
-                    <p><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em></p>
-                    <p><a href="index.php?action=report&amp;id=<?= $dataComments['id'] ?>">Signaler</a></p>
+                    <p id="commentMessage"><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em></p>
+                    <p><a id="btnReport" href="index.php?action=report&amp;id=<?= $dataComments['id']?>&amp;id_chapter=<?= $ticket['id'] ?>;">Signaler</a></p>
                 </div>
                 <?php } $comments->closeCursor();?>
             </div>

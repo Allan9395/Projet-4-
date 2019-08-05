@@ -2,7 +2,7 @@
 <?php ob_start(); ?>
 
 <div class="conteiner confirmationBody">
-<h2>Merci de vous etes inscrit vous pouvez des a présent écrire votre livre</h2>
+<h2 id="confirmation">Merci de vous etes inscrit vous pouvez des a présent écrire votre livre</h2>
 </div>
 
 

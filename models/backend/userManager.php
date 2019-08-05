@@ -1,4 +1,4 @@
-<?php
+<?php       // Backend User and Chapter admin
 namespace Allan\Blog\Projet_4\Model;
 
 require_once('models/frontend/manager.php');

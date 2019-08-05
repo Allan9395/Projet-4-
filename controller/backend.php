@@ -6,6 +6,8 @@ require_once('models/backend/chaptersManager.php');
 require_once('models/frontend/ticketsManager.php');
 require_once('models/frontend/commentsManager.php');
 
+// Create and verify the user with regular expressions
+
 function dataVerification($username, $email, $password, $password_confirm)
 {
     
@@ -18,17 +20,21 @@ function dataVerification($username, $email, $password, $password_confirm)
         $username = $username;
         $verification1 = true ;
     } else {
-        throw new Exeption('Erreur: Le pseudo n\'est pas valide');
+        throw new Exception('Erreur: Le pseudo n\'est pas valide');
     }
 
     if(preg_match('#^[\w.-]+@[\w.-]{2,}\.[a-z]{2,4}$#', $email)) {
         $email = $email;
         $verification2 = true ;
+    } else {
+        throw new Exception('Erreur: Le mail n\'est pas valide');
     }
 
     if (preg_match('#^([a-zA-Z0-9]{2,36})$#', $password)) {
         $password = $password;
         $verification3 = true ;
+    }else {
+        throw new Exception('Erreur: Le mot de passe n\'est pas valide');
     }
 
     if ($password == $password_confirm) {
@@ -42,9 +48,12 @@ function dataVerification($username, $email, $password, $password_confirm)
 
     if ($verification1 == true && $verification2 == true && $verification3 ==true && $verification4 == true ) {
         header('location: index.php?action=registrationConfirmation');
+    } else {
+        throw new Exception('Erreur: Le formulaire d\'inscription n\'a pas été remplis corectement');
     }
 }
 
+// Verify the password of the user
 function identityCheck($usernameConnect, $passwordConnect) 
 {
 
@@ -63,8 +72,6 @@ function identityCheck($usernameConnect, $passwordConnect)
         throw new Exception(' Mauvais identifiant ou mot de passe !');
     } else {
  
-        //echo $identityUser['id']. ' <br> '. $usernameConnect. ' <br>'. $passwordConnect. '<br>'. $identityUser['password']. '<br>'. $identicalEncryptedPassword. '<br>';
-
         if ($identicalEncryptedPassword) {
             session_start();
             $_SESSION['isAdmin'] = true;
@@ -72,7 +79,6 @@ function identityCheck($usernameConnect, $passwordConnect)
             $_SESSION['username'] = $usernameConnect;
             header('Location: index.php?action=admin');
         } else {
-            //echo 'Mauvais identifiant ou mot de passe !';
             throw new Exception(' Mauvais identifiant ou mot de passe !');
         }
     } 
@@ -148,4 +154,52 @@ function updateChapter ($idChapter, $newTitle, $newDescription, $newContent)
     }
 
 
+}
+
+    // Remove comments from chapter
+
+function reportComment ($idComment, $idChapter)
+{
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $updateLinesComment = $commentManager->updateComment($idComment);
+
+    if ($updateLinesComment == false) {
+        throw new Exception('Impossible de modifier le commentaire ! ');
+    } else {
+       header('Location: index.php?action=ticket&id='.$idChapter);
+    }
+
+}
+
+    // Commented comments management
+function commentsPosted()
+{
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $commentsPosted = $commentManager->commentsPosted();
+
+    require('views/backend/alertsComments.php');
+}
+
+function delateComment ($idComment)
+{
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $delateLinesComment = $commentManager->delateComment($idComment);
+
+    if ($delateLinesComment == false) {
+        throw new Exception('Impossible de supprimer le commentaire ! ');
+    } else {
+        header('Location: index.php?action=alertsComments');
+    }
+}
+
+function keepComment ($idComment)
+{
+    $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();
+    $keepLinesComment = $commentManager->keepComment($idComment);
+
+    if ($keepLinesComment == false) {
+        throw new Exception('Impossible de garder le commentaire ! ');
+    } else {
+        header('Location: index.php?action=alertsComments');
+    }
 }
