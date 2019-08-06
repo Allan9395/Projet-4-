@@ -43,7 +43,7 @@
           <a class="nav-link" href="index.php?action=disconnection"><i class="fas fa-user-plus"></i>Déconnexion</a>
         </li>
         <li class="nav-item active">
-        <p id="hello">Bonjour, <?= $_SESSION['username']?><br> bonne journée à vous</p>
+        <p id="hello">Bonjour, <?= $_COOKIE['username']?><br> bonne journée à vous</p>
         </li>
       </ul>
     </div>

@@ -73,10 +73,7 @@ function identityCheck($usernameConnect, $passwordConnect)
     } else {
  
         if ($identicalEncryptedPassword) {
-            session_start();
-            $_SESSION['isAdmin'] = true;
-            $_SESSION['id'] = $identityUser['id'];
-            $_SESSION['username'] = $usernameConnect;
+            setcookie('username', $usernameConnect, time() + 365*24*3600, null, null, false, true);
             header('Location: index.php?action=admin');
         } else {
             throw new Exception(' Mauvais identifiant ou mot de passe !');
