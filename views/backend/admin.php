@@ -8,7 +8,7 @@
             <h2 class="chapters">Chapitres</h2>
             <?php while ($data = $tickets->fetch()) {?>
 
-            <div class="card mb-12" style="max-width: auto;">
+            <div class="card mb-12 chapterAdmin" style="max-width: auto;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <img src="public/images/alaska1.jpeg" class="card-img" alt="alaska-photo">

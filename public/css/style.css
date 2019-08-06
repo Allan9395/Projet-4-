@@ -86,7 +86,12 @@ ul.contact-me {
 }
 
 /* ---------------------------------------------------------TICKET VIEW.PHP----------------------------------------------------*/
-/* ---------------------------------------------------------CHAPTERS VIEW.PHP--------------------------------------------------*/
+/* -----------------------------------------CHAPTERHOME.PHP CHAPTERS VIEW.PHP CHAPTERADMIN.PHP---------------------------------*/
+.chapterHome {
+    padding: 10px;
+    margin: 10px;
+    border: solid 2px #60d19c;
+}
 
 .chapter {
     padding: 10px;
@@ -94,8 +99,13 @@ ul.contact-me {
     border: solid 2px #60d19c;
 }
 
-/* ---------------------------------------------------------CHAPTERS VIEW.PHP--------------------------------------------------*/
+.chapterAdmin {
+    padding: 10px;
+    margin: 10px;
+    border: solid 2px #60d19c;
+}
 
+/* -----------------------------------------CHAPTERHOME.PHP CHAPTERS VIEW.PHP CHAPTERADMIN.PHP---------------------------------*/
 /* ---------------------------------------------------------REGISTRATION VIEW.PHP----------------------------------------------*/
 .conteinerForm {
     padding: 25px;
