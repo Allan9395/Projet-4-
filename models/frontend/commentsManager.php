@@ -10,7 +10,7 @@ class CommentsManager extends Manager
     {
         $db = $this->dbConnect();
 
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS date_jma, DATE_FORMAT(comment_date, \'%Hh%i\') AS date_hm FROM comments WHERE id_tickets = ? ORDER BY comment_date DESC');
+        $comments = $db->prepare('SELECT id, author, comment, report,  DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS date_jma, DATE_FORMAT(comment_date, \'%Hh%i\') AS date_hm FROM comments WHERE id_tickets = ? ORDER BY comment_date DESC');
         $comments->execute(array($idTicket));
         
         return $comments;

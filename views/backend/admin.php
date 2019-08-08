@@ -1,8 +1,8 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche;" connection' ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Connection'; ?>
 
 <?php ob_start(); ?>
 
-<header class="conteiner">
+<header class="container">
     <div class="row">
         <div class="col-sm-12">
             <h2 class="chapters">Chapitres</h2>
@@ -10,8 +10,7 @@
 
             <div class="card mb-12 chapterAdmin" style="max-width: auto;">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="public/images/alaska1.jpeg" class="card-img" alt="alaska-photo">
+                    <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

@@ -1,11 +1,13 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Accueil'; ?>
 
 <?php ob_start(); ?>
 
-<img src="public/images/sliderAlaska.jpg" class="img-fluid" alt="Responsive image">
+<img src="public/images/sliderAlaska.jpg" class="img-fluid sliderHome" alt="Responsive image">
 
-<header class="conteiner">
-    <div class="row">
+<header class="container">
+
+
+    <div class="row homeChapters">
         <div class="col-sm-4">
             <img src="public/images/jean.jpg" class="img-fluid" alt="Responsive image">
         </div>
@@ -16,8 +18,7 @@
 
             <div class="card mb-12 chapterHome" style="max-width: auto;">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="public/images/alaska1.jpeg" class="card-img imgHomeChapter" alt="alaska-photo">
+                    <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

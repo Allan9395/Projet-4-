@@ -1,7 +1,7 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche; Création de Chapitre'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Création de Chapitre'; ?>
 <?php ob_start(); ?>
 
-<div class="conteiner adminCreateChapter">
+<div class="container adminCreateChapter">
 
     <?php $data = $chapterToEdit->fetch(); ?>
     

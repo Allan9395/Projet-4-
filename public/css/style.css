@@ -33,7 +33,7 @@ i.fas {
 /* ---------------------------------------------------------NAV BAR------------------------------------------------------------*/
 /* ---------------------------------------------------------HEADER-------------------------------------------------------------*/
 header {
-    padding: 20px;
+    padding: 25px;
 }
 .chapters {
     text-align: center;
@@ -71,6 +71,10 @@ ul.contact-me {
 }
 /* ---------------------------------------------------------FOOTER-------------------------------------------------------------*/
 /* ---------------------------------------------------------HOME VIEW.PHP----------------------------------------------------*/
+.sliderHome {
+    width: 100%;
+
+}
 .imgHomeChapter {
     width: 85%;
 }
@@ -84,7 +88,19 @@ ul.contact-me {
     background-color: #4ea7464d;
     color: #000000 !important;
 }
-
+#btnReport {
+    color: red;
+    border: solid 2px #ff000082;
+    padding: 2px 8px;
+    margin-left: 15px;
+    background-color: #ff000024;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#btnReport:hover {
+    color: white;
+    background-color: red;
+}
 /* ---------------------------------------------------------TICKET VIEW.PHP----------------------------------------------------*/
 /* -----------------------------------------CHAPTERHOME.PHP CHAPTERS VIEW.PHP CHAPTERADMIN.PHP---------------------------------*/
 .chapterHome {

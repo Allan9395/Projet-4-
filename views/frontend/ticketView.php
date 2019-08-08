@@ -1,15 +1,16 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche; Chapitre'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Chapitre'; ?>
 <?php ob_start(); ?>
 <div class="container " id="ticketView">
 
     <p class="bouton_retour">
 
-        <button class="btn btn-default"><?= '<a href="index.php"> Retourner à la liste des chapitre </a>'; ?></button>
+        <button class="btn btn-default"><?= '<a href="index.php"> Retourner à la liste des chapitres </a>'; ?></button>
         </a>
     </p>
     <div class="card border-success mb-3 ticket">
         <div class="card-header">
-            <?= htmlspecialchars($ticket['title']). ', publié le '. $ticket['date_jma']. ' à '. $ticket['date_hm']  ?></div>
+            <?= htmlspecialchars($ticket['title']). ', publié le '. $ticket['date_jma']. ' à '. $ticket['date_hm']  ?>
+        </div>
         <div class="card-body text-success">
             <h5 class="card-title ticket-title-ticketView"><?= htmlspecialchars($ticket['title']); ?></h5>
             <p class="card-text"><?= $ticket['contents'] ?></p>
@@ -19,7 +20,8 @@
                 <h2>Commentaires</h2>
                 <div class="form-group">
                     <div class="form-group"><label for="author">Nom:</label></<label>
-                        <input type="text" name="author" class="form-control input-sm" id="author" placeholder="Nom" required>
+                        <input type="text" name="author" class="form-control input-sm" id="author" placeholder="Nom"
+                            required>
                     </div>
                     <div class="form-group"><label for="comment">Commentaire:</label></label>
                         <input type="text" name="comment" class="form-control input-sm" id="comment"
@@ -34,8 +36,16 @@
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($dataComments['author']); ?></strong> le
                         <?= $dataComments['date_jma']. ' à '. $dataComments['date_hm']; ?></p>
-                    <p id="commentMessage"><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em></p>
-                    <p><a id="btnReport" href="index.php?action=report&amp;id=<?= $dataComments['id']?>&amp;id_chapter=<?= $ticket['id'] ?>;">Signaler</a></p>
+                    <?php
+                    if ($dataComments['report'] == 0) { ?>
+                    <p id="commentMessage" style="color: #287721;"><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em> <a
+                            id="btnReport"
+                            href="index.php?action=report&amp;id=<?= $dataComments['id']?>&amp;id_chapter=<?= $ticket['id'] ?>;">Signaler</a>
+                        </<a>
+                    </p>
+                    <?php } elseif ($dataComments['report'] == 1) { ?>
+                        <p id="commentMessage" style="background-color: #ed46301a; color: red;"><em><?= nl2br(htmlspecialchars($dataComments['comment'])); ?></em>
+                    <?php } ?>
                 </div>
                 <?php } $comments->closeCursor();?>
             </div>

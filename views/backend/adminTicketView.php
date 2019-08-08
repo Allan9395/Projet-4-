@@ -1,4 +1,4 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche; Chapitre admin'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Chapitre admin'; ?>
 <?php ob_start(); ?>
 <div class="container " id="adminTicketView">
 

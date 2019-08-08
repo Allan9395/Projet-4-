@@ -1,7 +1,7 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche'; ?>
 
 <?php ob_start(); ?>
-<header class="conteiner">
+<header class="container">
     <div class="row">
         <div class="col-sm-4">
             <img src="public/images/jean.jpg" class="img-fluid" alt="Responsive image">

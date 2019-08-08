@@ -188,7 +188,8 @@ function delateComment ($idComment)
         header('Location: index.php?action=alertsComments');
     }
 }
-
+ // Signaler un commentaire
+ 
 function keepComment ($idComment)
 {
     $commentManager = new \Allan\Blog\Projet_4\Model\CommentsManager();

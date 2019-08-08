@@ -1,9 +1,10 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche;" alertsCommentaires' ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - alertsCommentaires'; ?>
 
 <?php ob_start() ?>
 
+<div class="container">
 <div class="card-footer">
-    <h1>Les commentaire signalés </h1>
+    <h1>Les commentaires signalés </h1>
 
     <?php while ($dataComments = $commentsPosted->fetch()) { ?>
 

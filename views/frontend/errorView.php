@@ -1,7 +1,7 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche, erreur'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Erreurs'; ?>
 
 <?php ob_start(); ?>
-<div class="conteiner errors">
+<div class="container errors">
 <h1>Ooups c'est pas normal ! </h1>
 <p><?= $errorMessage ?></p>
 </div>

@@ -1,11 +1,12 @@
-
 tinymce.init({
 	/* replace textarea having class .tinymce with tinymce editor */
 	selector: "textarea.tinymce",
-	
+
+	language:"fr_FR",
+
 	/* width and height of the editor */
 	width: "100%",
-	height: 300,
+	height: 550,
 	
 	/* display statusbar */
 	statubar: true,

@@ -51,13 +51,13 @@
 
   <?= $content ?>
 
-  <footer class="conteiner">
+  <footer>
     <div class="row">
       <div class="col-sm-3">
         <img src="public/images/footerAlaska.jpg" class="img-fluid" alt="Responsive image">
       </div>
       <div class="col-sm-6">
-        <p>Merci de me suivre vous pouver partager et me retrouver sur les reseaux sociaux <br> Suivez-Moi :
+        <p>Merci de me suivre vous pouver partager et me retrouver sur les réseaux sociaux <br> Suivez-Moi :
           <span><i class="fab fa-twitter-square"></i> <i class="fab fa-instagram"></i> <i
               class="fab fa-facebook-square fa-2x"></i></span>
         </p>
@@ -66,7 +66,7 @@
         <ul class="contact-me">
           <h5>Contactez-Moi :</h5>
           <h6>Jean Forteroche</h6>
-          <li>jeanforteroche@ecrivain.com</li>
+          <li>jeanforteroche @ecrivain.com</li>
           <li>Boite Postal</li>
           <li>6 rue de la liberté</li>
           <li>75000 PARIS</li>

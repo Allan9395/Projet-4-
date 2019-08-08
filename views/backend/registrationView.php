@@ -1,7 +1,7 @@
-<?php $title = 'Blog Ecrivain; Jean Forteroche; Enregistrement'; ?>
+<?php $title = 'Blog Ecrivain - Jean Forteroche - Enregistrement'; ?>
 <?php ob_start(); ?>
 
-<div class="conteiner conteinerForm">
+<div class="container conteinerForm">
     <h2>Rejoignez-nous</h2>
     <hr>
     <div class="registerForm">
